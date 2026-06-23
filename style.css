@@ -366,9 +366,11 @@ h2 {
 }
 
 .mix-title-stack.has-title-image {
-  width: min(100%, 210px);
+  width: fit-content;
+  max-width: 100%;
   align-items: flex-start;
   margin-left: 0;
+  --vinyl-title-width: clamp(178px, 16vw, 214px);
 }
 
 .mix-body h3 {
@@ -399,10 +401,9 @@ h2 {
 }
 
 .mix-title-image {
-  width: 100%;
-  max-width: 210px;
-  height: clamp(24px, 3vw, 34px);
-  max-height: none;
+  width: var(--vinyl-title-width);
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
   object-position: left center;
   background: transparent;
@@ -417,22 +418,24 @@ h2 {
 }
 
 .mix-title-image.is-dreamz-title {
-  width: calc(100% + 6px);
-  max-width: 216px;
-  transform: translateX(-6px);
+  width: var(--vinyl-title-width);
+  max-width: 100%;
+  transform: none;
 }
 
 .mix-subtitle {
   margin-top: 7px;
   color: rgba(241, 237, 223, .62);
-  font-size: clamp(10px, 1.2vw, 13px);
-  letter-spacing: .08em;
+  font-size: clamp(9px, .82vw, 11px);
+  letter-spacing: .045em;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .has-title-image .mix-subtitle {
-  width: 100%;
+  width: var(--vinyl-title-width);
   text-align: left;
+  max-width: 100%;
 }
 
 .mix-meta {
@@ -957,7 +960,9 @@ footer {
 
   .mix-title-stack.has-title-image {
     margin-left: 0;
-    width: min(100%, 170px);
+    width: fit-content;
+    max-width: 100%;
+    --vinyl-title-width: clamp(154px, 47vw, 184px);
   }
 
   .mix-body h3 {
@@ -973,14 +978,15 @@ footer {
   }
 
   .mix-title-image {
-    max-width: 170px;
-    height: clamp(22px, 7.2vw, 30px);
+    width: var(--vinyl-title-width);
+    max-width: 100%;
+    height: auto;
   }
 
   .mix-title-image.is-dreamz-title {
-    width: calc(100% + 5px);
-    max-width: 175px;
-    transform: translateX(-5px);
+    width: var(--vinyl-title-width);
+    max-width: 100%;
+    transform: none;
   }
 
   .gallery,
