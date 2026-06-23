@@ -440,7 +440,7 @@ h2 {
 
 .has-title-image .mix-subtitle {
   width: var(--vinyl-white-width);
-  text-align: left;
+  text-align: center;
   max-width: 100%;
 }
 
@@ -865,7 +865,7 @@ pre {
 
 footer {
   padding: 30px clamp(16px, 3vw, 40px) 38px;
-  color: rgba(241, 237, 223, .52);
+  color: var(--acid);
   font-family: inherit;
   font-size: clamp(11px, 1.4vw, 14px);
   line-height: 1;
