@@ -370,7 +370,7 @@ h2 {
   max-width: 100%;
   align-items: flex-start;
   margin-left: 0;
-  --vinyl-title-width: clamp(178px, 16vw, 214px);
+  --vinyl-title-width: clamp(226px, 19vw, 252px);
 }
 
 .mix-body h3 {
@@ -426,8 +426,8 @@ h2 {
 .mix-subtitle {
   margin-top: 7px;
   color: rgba(241, 237, 223, .62);
-  font-size: clamp(9px, .82vw, 11px);
-  letter-spacing: .045em;
+  font-size: clamp(9px, .72vw, 10px);
+  letter-spacing: .015em;
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -962,7 +962,7 @@ footer {
     margin-left: 0;
     width: fit-content;
     max-width: 100%;
-    --vinyl-title-width: clamp(154px, 47vw, 184px);
+    --vinyl-title-width: clamp(208px, 64vw, 238px);
   }
 
   .mix-body h3 {
