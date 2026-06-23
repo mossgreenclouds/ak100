@@ -241,7 +241,7 @@ function buildMixes() {
       <div class="mix-body">
         <div class="mix-title-row">
           <div class="mix-title-stack ${mix.titleImage ? "has-title-image" : ""}">
-            <h3>${mix.titleImage ? `<img class="mix-title-image ${mix.title === "dreamz" ? "is-dreamz-title" : ""}" src="${mix.titleImage}" alt="${mix.title}">` : escapeHtml(mix.title)}</h3>
+            <h3>${mix.titleImage ? `<img class="mix-title-image ${mix.title === "dreamz" ? "is-dreamz-title" : ""} ${mix.title === "DA FINEST" ? "is-finest-title" : ""}" src="${mix.titleImage}" alt="${mix.title}">` : escapeHtml(mix.title)}</h3>
             ${mix.subtitle ? `<div class="mix-subtitle">${escapeHtml(mix.subtitle)}</div>` : ""}
           </div>
           <div class="mix-meta">
