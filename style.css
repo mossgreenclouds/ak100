@@ -432,7 +432,7 @@ h2 {
 .mix-subtitle {
   margin-top: 7px;
   color: rgba(241, 237, 223, .62);
-  font-size: clamp(9px, .72vw, 10px);
+  font-size: clamp(10px, .78vw, 12px);
   letter-spacing: .015em;
   line-height: 1.1;
   white-space: nowrap;
@@ -730,16 +730,16 @@ audio {
   max-width: min(100%, calc(100vw - 24px));
   min-height: 28px;
   background:
-    linear-gradient(90deg, rgba(3, 3, 3, .46), transparent 82%);
+    linear-gradient(90deg, rgba(3, 3, 3, .62), rgba(3, 3, 3, .14) 72%, transparent);
   border: 0;
-  color: rgba(241, 237, 223, .86);
+  color: rgba(241, 237, 223, .92);
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   font-weight: 760;
   line-height: 1.13;
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: normal;
-  opacity: .32;
+  opacity: .52;
   transform: translateY(8px);
   text-shadow:
     0 1px 0 rgba(0, 0, 0, .96),
@@ -751,22 +751,22 @@ audio {
 }
 
 .dream-fragment:nth-child(5n + 1) {
-  color: rgba(200, 255, 33, .72);
+  color: rgba(200, 255, 33, .88);
 }
 
 .dream-fragment:nth-child(5n + 3) {
-  color: rgba(241, 237, 223, .78);
+  color: rgba(241, 237, 223, .9);
 }
 
 .dream-fragment:nth-child(7n + 2) {
-  color: rgba(184, 64, 43, .76);
+  color: rgba(218, 91, 68, .9);
 }
 
 @keyframes fragment-emerge {
   0%,
   16%,
   100% {
-    opacity: .18;
+    opacity: .38;
     transform: translateY(8px);
   }
 
@@ -777,24 +777,24 @@ audio {
   }
 
   74% {
-    opacity: .2;
+    opacity: .42;
     transform: translateY(-6px);
   }
 }
 
 .text-xs {
   justify-self: start;
-  font-size: clamp(10px, .85vw, 13px);
+  font-size: clamp(13px, .98vw, 16px);
 }
 
 .text-s {
   justify-self: start;
-  font-size: clamp(11px, 1.05vw, 17px);
+  font-size: clamp(14px, 1.12vw, 19px);
 }
 
 .text-m {
   justify-self: start;
-  font-size: clamp(13px, 1.45vw, 24px);
+  font-size: clamp(16px, 1.48vw, 25px);
 }
 
 .text-l {
@@ -806,14 +806,14 @@ audio {
   justify-self: start;
   font-size: clamp(20px, 3.2vw, 56px);
   line-height: 1;
-  color: rgba(241, 237, 223, .9);
+  color: rgba(241, 237, 223, .94);
 }
 
 .text-giant {
   justify-self: start;
   font-size: clamp(26px, 4.4vw, 76px);
   line-height: .9;
-  color: rgba(241, 237, 223, .82);
+  color: rgba(241, 237, 223, .9);
 }
 
 .text-vertical {
@@ -1045,7 +1045,7 @@ footer {
 
   .floating-text {
     width: min(var(--w), 88vw);
-    font-size: clamp(12px, var(--size), 22px);
+    font-size: clamp(14px, var(--size), 24px);
   }
 
   .text-vertical {
