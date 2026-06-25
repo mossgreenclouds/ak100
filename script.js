@@ -133,33 +133,17 @@ const mixes = [
 
 const photos = window.AK100_PHOTOS || [];
 
-const dreamText = window.AK100_DREAM_TEXT || "";
+let dreamText = window.AK100_DREAM_TEXT || "";
+const dreamTextPath = "assets/text/夢境紀.txt";
 
-function splitByJapanesePeriodOutsideParentheses(text) {
-  const sentences = [];
-  let buffer = "";
-  let parenthesisDepth = 0;
-
-  for (const character of text) {
-    buffer += character;
-
-    if (character === "（") {
-      parenthesisDepth += 1;
-    } else if (character === "）" && parenthesisDepth > 0) {
-      parenthesisDepth -= 1;
-    }
-
-    if (character === "。" && parenthesisDepth === 0) {
-      const sentence = buffer.trim();
-      if (sentence) sentences.push(sentence);
-      buffer = "";
-    }
+async function loadDreamText() {
+  try {
+    const response = await fetch(`${dreamTextPath}?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return;
+    dreamText = await response.text();
+  } catch {
+    // Local file previews may block fetch; keep content.generated.js as fallback.
   }
-
-  const remaining = buffer.trim();
-  if (remaining) sentences.push(remaining);
-
-  return sentences;
 }
 
 function splitDreamText() {
@@ -169,7 +153,11 @@ function splitDreamText() {
     .filter(Boolean);
 
   return parts.flatMap((part) => {
-    const sentences = splitByJapanesePeriodOutsideParentheses(part.replace(/\n/g, " "));
+    const lineGroups = part
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    const sentences = lineGroups;
 
     const fragments = [];
     let index = 0;
@@ -394,5 +382,10 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") hideLightbox();
 });
 
-buildGallery();
-buildMixes();
+async function initSite() {
+  await loadDreamText();
+  buildGallery();
+  buildMixes();
+}
+
+initSite();
