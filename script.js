@@ -252,7 +252,7 @@ function buildGallery() {
   const createPhotoItem = (name, index, className = "") => {
     const src = `assets/img/${name}`;
     const label = name.replace(/\.[^.]+$/, "");
-    const motion = ["still", "slide-x", "slide-y", "cut-x", "still", "slide-x"][index % 6];
+    const motion = ["still", "slide-x", "slide-y", "slide-x", "still", "slide-x"][index % 6];
     const photoStyle = [
       `--lift:${randomBetween(-28, 28).toFixed(0)}px`,
       `--shift:${randomBetween(-24, 24).toFixed(0)}px`,

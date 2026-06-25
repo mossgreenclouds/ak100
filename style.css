@@ -478,11 +478,6 @@ audio {
   animation-name: slide-y;
 }
 
-.cut-x {
-  animation-name: cut-x;
-  animation-timing-function: steps(2, end);
-}
-
 .still {
   animation-name: none;
 }
@@ -504,16 +499,6 @@ audio {
 
   to {
     transform: translate(var(--shift, 0), calc(var(--lift, 0px) + var(--run, 0px))) scale(var(--scale, 1));
-  }
-}
-
-@keyframes cut-x {
-  from {
-    transform: translate(calc(var(--shift, 0px) - var(--run, 0px)), var(--lift, 0)) scale(var(--scale, 1));
-  }
-
-  to {
-    transform: translate(calc(var(--shift, 0px) + var(--run, 0px)), var(--lift, 0)) scale(var(--scale, 1));
   }
 }
 
