@@ -757,10 +757,11 @@ footer {
   }
 
   .mix-title-stack {
-    --mix-title-height: 44px;
+    --mix-title-height: 50px;
   }
 
   .mix-title-stack.has-title-image {
+    --mix-title-height: 44px;
     --mix-title-image-bottom: 4px;
     --vinyl-white-width: clamp(208px, 64vw, 238px);
   }
