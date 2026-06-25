@@ -80,13 +80,13 @@ video {
   margin: 0 auto;
   padding: 96px 0 54px;
   display: grid;
-  grid-template-columns: minmax(132px, 260px) 1fr;
+  grid-template-columns: clamp(132px, 20vw, 260px) minmax(0, 1fr);
   gap: clamp(24px, 6vw, 72px);
   align-items: center;
 }
 
 .hero-logo {
-  width: min(260px, 50vw);
+  width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   filter: drop-shadow(18px 18px 0 rgba(184, 64, 43, .28)) invert(.02);
@@ -115,18 +115,22 @@ h1 {
 }
 
 .hero-title {
+  --credit-size: clamp(40px, 5.8vw, 78px);
+  --credit-gap: clamp(8px, 1.2vw, 18px);
+  position: relative;
   display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
-  transform: translateY(clamp(18px, 3.4vw, 44px));
 }
 
 .hero-credit {
+  position: absolute;
+  top: calc(100% + var(--credit-gap));
+  right: clamp(4px, 1.2vw, 18px);
   display: inline-flex;
   align-items: center;
   gap: clamp(6px, .8vw, 12px);
-  margin-top: clamp(8px, 1.2vw, 18px);
-  margin-right: clamp(4px, 1.2vw, 18px);
+  margin: 0;
   color: rgba(241, 237, 223, .72);
   font-family: "UnifrakturMaguntia", "Old English Text MT", "UnifrakturCook", "Times New Roman", serif;
   font-size: clamp(18px, 2.4vw, 36px);
@@ -137,7 +141,7 @@ h1 {
 }
 
 .hero-credit img {
-  width: clamp(40px, 5.8vw, 78px);
+  width: var(--credit-size);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   object-position: center;
@@ -631,6 +635,16 @@ footer {
 }
 
 @media (max-width: 940px) {
+  h1 {
+    font-size: clamp(72px, 17vw, 160px);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .hero-title {
+    justify-self: end;
+  }
+
   .gallery,
   .mix-backdrop {
     width: min(1180px, calc(100% + 8vw));
@@ -668,20 +682,17 @@ footer {
 
   .hero-logo {
     width: 100%;
+    filter: drop-shadow(clamp(5px, 2vw, 8px) clamp(5px, 2vw, 8px) 0 rgba(184, 64, 43, .22)) invert(.02);
   }
 
   h1 {
     font-size: clamp(52px, 17vw, 78px);
+    text-align: right;
     white-space: nowrap;
   }
 
   .hero-title {
-    align-items: flex-start;
-    transform: none;
-  }
-
-  .hero-credit {
-    margin-right: 0;
+    align-items: flex-end;
   }
 
   .mix-section {
