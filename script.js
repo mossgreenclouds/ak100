@@ -171,9 +171,9 @@ const mixClassByTitle = {
   "88.4MHz": "is-884mhz"
 };
 
-const titleImageClassByTitle = {
-  dreamz: "is-dreamz-title",
-  "DA FINEST": "is-finest-title"
+const titleStackClassByTitle = {
+  dreamz: "is-dreamz-stack",
+  "DA FINEST": "is-finest-stack"
 };
 
 function escapeHtml(text) {
@@ -203,15 +203,17 @@ function mixCardClass(mix) {
   return variant ? `mix-card ${variant}` : "mix-card";
 }
 
-function mixTitleImageClass(mix) {
-  const variant = titleImageClassByTitle[mix.title];
-  return variant ? `mix-title-image ${variant}` : "mix-title-image";
-}
-
 function renderMixTitle(mix) {
   if (!mix.titleImage) return escapeHtml(mix.title);
 
-  return `<img class="${mixTitleImageClass(mix)}" src="${escapeHtml(mix.titleImage)}" alt="${escapeHtml(mix.title)}">`;
+  return `<img class="mix-title-image" src="${escapeHtml(mix.titleImage)}" alt="${escapeHtml(mix.title)}">`;
+}
+
+function mixTitleStackClass(mix) {
+  const classes = ["mix-title-stack"];
+  if (mix.titleImage) classes.push("has-title-image");
+  if (titleStackClassByTitle[mix.title]) classes.push(titleStackClassByTitle[mix.title]);
+  return classes.join(" ");
 }
 
 function buildMixes() {
@@ -225,7 +227,7 @@ function buildMixes() {
       </div>
       <div class="mix-body">
         <div class="mix-title-row">
-          <div class="mix-title-stack ${mix.titleImage ? "has-title-image" : ""}">
+          <div class="${mixTitleStackClass(mix)}">
             <h3>${renderMixTitle(mix)}</h3>
             ${mix.subtitle ? `<div class="mix-subtitle">${escapeHtml(mix.subtitle)}</div>` : ""}
           </div>
