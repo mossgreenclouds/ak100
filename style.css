@@ -297,12 +297,12 @@ h1 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin: 0 0 12px;
+  margin: 0 0 var(--mix-player-gap, 6px);
 }
 
 .mix-title-stack {
   min-width: 0;
-  min-height: clamp(46px, 5.6vw, 68px);
+  min-height: var(--mix-title-height, clamp(46px, 5.6vw, 68px));
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -312,8 +312,7 @@ h1 {
   width: fit-content;
   max-width: 100%;
   align-items: flex-start;
-  margin-left: 0;
-  padding-bottom: clamp(12px, 1.5vw, 19px);
+  padding-bottom: var(--mix-title-image-bottom, clamp(6px, .8vw, 10px));
   --vinyl-white-width: clamp(226px, 19vw, 252px);
 }
 
@@ -328,6 +327,10 @@ h1 {
 .is-yumekyouki .mix-body h3 {
   font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
   font-weight: 900;
+}
+
+.is-yumekyouki .mix-title-stack {
+  --mix-title-height: clamp(43px, 5.2vw, 62px);
 }
 
 .is-my-favorite-shit .mix-body h3 {
@@ -764,11 +767,11 @@ footer {
   }
 
   .mix-title-stack {
-    min-height: 44px;
+    --mix-title-height: 44px;
   }
 
   .mix-title-stack.has-title-image {
-    padding-bottom: 7px;
+    --mix-title-image-bottom: 4px;
     --vinyl-white-width: clamp(208px, 64vw, 238px);
   }
 
