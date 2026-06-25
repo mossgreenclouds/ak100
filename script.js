@@ -148,8 +148,7 @@ async function loadDreamText() {
 
 function splitDreamText() {
   return dreamText
-    .split(/\n\s*\n/)
-    .flatMap((part) => part.split(/\n+/))
+    .split(/\n+/)
     .map((line) => line.trim())
     .filter(Boolean);
 }
@@ -285,7 +284,7 @@ function buildGallery() {
     }))
   ].sort((left, right) => left.order - right.order);
 
-  const items = [...distributedItems];
+  const items = distributedItems;
 
   const mixIndex = Math.min(
     Math.max(isMobile ? 32 : 42, Math.floor(items.length * .5)),

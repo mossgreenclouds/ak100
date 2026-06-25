@@ -332,7 +332,6 @@ h1 {
   height: auto;
   object-fit: contain;
   object-position: left center;
-  background: transparent;
   filter: grayscale(1) contrast(1.25);
   mix-blend-mode: screen;
 }
@@ -420,8 +419,6 @@ audio {
 
 .gallery .photo-item {
   width: 100%;
-  border: 0;
-  background: transparent;
 }
 
 .photo-item img {
@@ -442,8 +439,6 @@ audio {
   position: relative;
   z-index: var(--z, 1);
   transform: translate(var(--shift, 0), var(--lift, 0)) scale(var(--scale, 1));
-  background: #050505;
-  border: 1px solid rgba(241, 237, 223, .055);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .58), 0 14px 36px rgba(0, 0, 0, .2);
   margin: var(--bleed, 0);
   opacity: var(--alpha, .88);
@@ -452,22 +447,6 @@ audio {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-.photo-item:nth-child(6n + 1) {
-  margin-top: calc(var(--bleed, 0px) - 18px);
-}
-
-.photo-item:nth-child(6n + 3) {
-  --lift: 14px;
-}
-
-.photo-item:nth-child(6n + 5) {
-  --lift: -12px;
-}
-
-.photo-item:nth-child(7n + 2) {
-  --lift: -18px;
 }
 
 .slide-x {
@@ -553,6 +532,7 @@ audio {
 
 .dream-fragment {
   grid-column: var(--text-start, 2) / span var(--text-span, 3);
+  justify-self: start;
   margin: 0;
   padding: clamp(5px, .65vw, 11px) clamp(4px, .55vw, 9px);
   display: flex;
@@ -565,9 +545,7 @@ audio {
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   font-weight: 760;
   line-height: 1.13;
-  white-space: normal;
   overflow-wrap: anywhere;
-  word-break: normal;
   opacity: .52;
   transform: translateY(8px);
   text-shadow:
@@ -616,27 +594,22 @@ audio {
 }
 
 .text-xs {
-  justify-self: start;
   font-size: clamp(13px, .98vw, 16px);
 }
 
 .text-s {
-  justify-self: start;
   font-size: clamp(14px, 1.12vw, 19px);
 }
 
 .text-m {
-  justify-self: start;
   font-size: clamp(16px, 1.48vw, 25px);
 }
 
 .text-l {
-  justify-self: start;
   font-size: clamp(16px, 2.1vw, 36px);
 }
 
 .text-xl {
-  justify-self: start;
   font-size: clamp(20px, 3.2vw, 56px);
   line-height: 1;
   color: rgba(241, 237, 223, .94);
@@ -662,7 +635,6 @@ footer {
   .mix-backdrop {
     width: min(1180px, calc(100% + 8vw));
     grid-template-columns: repeat(8, minmax(0, 1fr));
-    transform: translateX(-4vw);
     gap: 5px;
   }
 
@@ -742,7 +714,6 @@ footer {
     width: calc(100% + 16vw);
     grid-template-columns: repeat(6, minmax(0, 1fr));
     transform: translateX(-8vw);
-    gap: 5px;
   }
 
   .wide,
