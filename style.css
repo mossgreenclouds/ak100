@@ -332,6 +332,7 @@ h1 {
   max-width: 100%;
   align-items: flex-start;
   margin-left: 0;
+  padding-bottom: clamp(12px, 1.5vw, 19px);
   --vinyl-white-width: clamp(226px, 19vw, 252px);
 }
 
@@ -807,6 +808,7 @@ footer {
     margin-left: 0;
     width: fit-content;
     max-width: 100%;
+    padding-bottom: 7px;
     --vinyl-white-width: clamp(208px, 64vw, 238px);
   }
 
