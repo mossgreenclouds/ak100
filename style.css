@@ -707,6 +707,10 @@ footer {
     --mix-title-height: 50px;
   }
 
+  .mix-title-stack:not(.has-title-image) {
+    padding-top: 4px;
+  }
+
   .mix-title-stack.has-title-image {
     width: 100%;
     --mix-title-height: 44px;
